@@ -13,23 +13,23 @@
     //Font
 
     //font-sizes
-    @each $screen-size, $font-size in $font-sizes {
+    @each $screen-size, $font-sizes in $font-size {
         @if $screen-size == small { 
             //mobile
-            @each $size, $value in $font-size{
+            @each $size, $value in $font-sizes{
                 --fz-#{$size}: #{$value};
             }
         } @else if $screen-size == mid {
             @include bp-up(small) {
                 //tablet
-                @each $size, $value in $font-size{
+                @each $size, $value in $font-sizes{
                     --fz-#{$size}: #{$value};
                 }
             }
         } @else if $screen-size == big {
             @include bp-up(large) {
                 //desktop
-                @each $size, $value in $font-size{
+                @each $size, $value in $font-sizes{
                     --fz-#{$size}: #{$value};
                 }
             }
@@ -37,12 +37,12 @@
     }
 
     //font-weight
-    @each $weight, $value in $font-weights {
+    @each $weight, $value in $font-weight {
         --fw-#{$weight}: #{$value};
     }
 
     //line-height
-    @each $height, $value in $line-heights {
+    @each $height, $value in $line-height {
         --lh-#{$height}: #{$value};
     }
 
