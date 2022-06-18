@@ -18,13 +18,13 @@ $bp-down: (
     "xxlarge": "1399px",
 );
 
-@mixin breakpoint-up($size) { 
+@mixin bp-up($size) { 
     @media (min-width: map-get($bp-up, $size)) {
         @content;
     }
 }
 
-@mixin breakpoint-down($size) { 
+@mixin bp-down($size) { 
     @media (max-width: map-get($bp-down, $size)) {
         @content;
     }

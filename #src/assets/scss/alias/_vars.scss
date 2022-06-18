@@ -1,3 +1,8 @@
+@use 'colors' as *;
+@use 'font-style' as *;
+@use 'medias' as *;
+@use 'z-index' as *;
+
 :root {
     //colors
     @each $hue, $shades in $colors {
