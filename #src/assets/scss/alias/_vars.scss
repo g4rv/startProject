@@ -1,0 +1,48 @@
+:root {
+    //colors
+    @each $hue, $shades in $colors {
+        @each $shade, $color in $shades {
+        }
+    }
+
+    //Font
+
+    //font-sizes
+    @each $screen-size, $font-size in $font-sizes {
+        @if $screen-size == small { 
+            //mobile
+            @each $size, $value in $font-size{
+                --fz-#{$size}: #{$value};
+            }
+        } @else if $screen-size == mid {
+            @include bp-up(small) {
+                //tablet
+                @each $size, $value in $font-size{
+                    --fz-#{$size}: #{$value};
+                }
+            }
+        } @else if $screen-size == big {
+            @include bp-up(large) {
+                //desktop
+                @each $size, $value in $font-size{
+                    --fz-#{$size}: #{$value};
+                }
+            }
+        }
+    }
+
+    //font-weight
+    @each $weight, $value in $font-weights {
+        --fw-#{$weight}: #{$value};
+    }
+
+    //line-height
+    @each $height, $value in $line-heights {
+        --lh-#{$height}: #{$value};
+    }
+
+    //z-index
+    @each $index, $value in $z-index {
+        --i-#{$index}: #{$value};
+    }
+}
